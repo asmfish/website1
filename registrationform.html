@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color: darkslategray;
+            }
+            .container{
+                margin: auto;
+                background-color: chartreuse;
+                width: 60%;
+                padding: 10px;
+            }
+            label{
+                display: block;
+                margin-top: 10px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            input[type=text], select, input[type=date], textarea{
+                width:80%;
+            }
+        </style>
+        <script>
+            function validate(){
+                var x = document.getElementById("gender").value;
+                alert(x);
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <form action="savedata.php" method="post" onsubmit="return validate();">
+                <h1>Student Registration Form</h1>
+                <label for="fn">First Name:</label>
+                <input type="text" id="firstname" name="firstname">
+
+                <label for="fn">Last Name:</label>
+                <input type="text" id="lastname" name="lastname">
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option></option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="datebirth">
+
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <option></option>
+                    <option value="Eritrea">Eritrea</option>
+                    <option value="India">India</option>
+                    <option value="India">China</option>
+                    <option value="Ethiopia">Ethiopia</option>
+                </select>
+
+                <label for="aboutme">About you:</label>
+                <textarea id="aboutme" name="aboutme" cols="30" rows="10">
+
+                </textarea>
+                <div id="error"></div>
+                <input type="submit" value="Save Data">
+            </form>
+            <a href="searchstudents.html">Seach Students</a>
+        </div>
+    </body>
+</html>
